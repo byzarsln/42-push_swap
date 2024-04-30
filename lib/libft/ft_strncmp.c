@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: muguveli <muguveli@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/27 14:49:12 by muguveli          #+#    #+#             */
-/*   Updated: 2024/04/27 14:49:37 by muguveli         ###   ########.fr       */
+/*   Created: 2024/04/30 15:32:05 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/04/30 15:32:06 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

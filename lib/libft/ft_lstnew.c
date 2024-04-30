@@ -5,21 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 11:43:35 by beyarsla          #+#    #+#             */
-/*   Updated: 2023/12/23 13:02:11 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/04/30 15:31:34 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/04/30 15:31:36 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
-	t_list	*array;
+	static int	inx;
+	t_list		*p;
 
-	array = malloc(sizeof(t_list));
-	if (!array)
-		return (NULL);
-	array->content = content;
-	array->next = 0;
-	return (array);
+	p = malloc(sizeof(t_list));
+	if (!p)
+		return (0);
+	p->inx = inx++;
+	p->content = content;
+	p->next = NULL;
+	p->isrr = -1;
+	p->moves = -1;
+	p->target = NULL;
+	return (p);
 }

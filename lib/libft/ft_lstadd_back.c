@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/17 15:36:50 by beyarsla          #+#    #+#             */
-/*   Updated: 2023/12/23 13:01:43 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/04/30 15:31:04 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/04/30 15:31:05 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
-	if (!lst || !*lst)
+	if (!lst)
+		return ;
+	if (!*lst)
 	{
 		*lst = new;
 		return ;
 	}
 	tmp = *lst;
-	while (tmp->next)
-	{
+	while (tmp->next != 0)
 		tmp = tmp->next;
-	}
 	tmp->next = new;
 }

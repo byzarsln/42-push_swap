@@ -5,37 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 11:47:24 by beyarsla          #+#    #+#             */
-/*   Updated: 2023/12/21 18:10:30 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/04/30 15:30:44 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/04/30 18:12:59 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "unistd.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int		i;
+	int		sign;
+	long	tmp;
 
 	i = 0;
 	sign = 1;
-	result = 0;
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+	tmp = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if ((str[i] == '+' || str[i] == '-'))
 	{
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	if (str[i] == '-')
+	while (str[i] >= 48 && str[i] <= 57)
+		tmp = (tmp * 10) + (str[i++] - 48);
+	if (sign * tmp > 2147483647 || sign * tmp < -2147483648)
 	{
-		sign *= -1;
-		i++;
+		write(1, "Error\n", 6);
+		exit(1);
 	}
-	else if (str[i] == '+')
-		i++;
-	while (ft_isdigit(str[i]))
-	{
-		result = (str[i] - 48) + (result * 10);
-		i++;
-	}
-	return (result * sign);
+	return (tmp * sign);
 }

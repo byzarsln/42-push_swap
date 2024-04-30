@@ -5,19 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 19:19:21 by beyarsla          #+#    #+#             */
-/*   Updated: 2023/12/19 17:48:14 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/04/30 15:30:56 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/04/30 19:02:15 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
+int	ft_isdigit(char c)
 {
-	if (c >= '0' && c <= '9')
-	{
+	if ((c >= '0' && c <= '9') || c == '-' || c == '+')
 		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }

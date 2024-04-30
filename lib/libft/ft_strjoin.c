@@ -5,36 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/11 17:53:12 by beyarsla          #+#    #+#             */
-/*   Updated: 2023/12/21 18:38:05 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/04/30 15:31:50 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/04/30 15:31:52 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	int		i;
-	int		j;
-	char	*str;
+	char			*res;
+	size_t			i;
+	size_t			j;
 
-	str = malloc(((ft_strlen(s1) + ft_strlen(s2)) + 1) * sizeof(char));
-	if (!str)
+	if (!s1)
+	{
+		s1 = malloc(sizeof(char) * 1);
+		s1[0] = '\0';
+	}
+	res = malloc(ft_strlen(s1) + ft_strlen(s2) + 2);
+	if (!res)
 		return (NULL);
-	if (!s1 && !s2)
-		return (NULL);
-	i = 0;
 	j = 0;
-	while (s1[i])
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	while (s2[j])
-	{
-		str[i + j] = s2[j];
-		j++;
-	}
-	str[i + j] = '\0';
-	return (str);
+	i = 0;
+	if (s1)
+		while (s1[i])
+			res[j++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		res[j++] = s2[i++];
+	res[j] = ' ';
+	res[j + 1] = '\0';
+	free(s1);
+	return (res);
 }

@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 19:03:17 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/04/29 19:04:13 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/04/30 15:32:10 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/04/30 15:32:12 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_swap(int	*a, int	*b)
 {
