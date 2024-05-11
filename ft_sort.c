@@ -6,32 +6,11 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 17:07:48 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/10 18:50:57 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/11 15:40:40 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	sort_four(t_list **a, t_list **b)
-{
-	int	min;
-	int	i;
-
-	i = 0;
-	min = find_min_nbr(*a);
-	while (i < 1)
-	{
-		if (min == (*a)->content)
-		{
-			ft_pushs(a, b, 'b');
-			i++;
-		}
-		else
-			ft_rotates(a, b, 'a');
-	}
-	sort_three(a);
-	ft_pushs(a, b, 'a');
-}
 
 void	sort_three(t_list **a)
 {
@@ -61,6 +40,59 @@ void	sort_three(t_list **a)
 		ft_swaps(a, NULL, 'a');
 	}
 }
+void	sort_four(t_list **a, t_list **b)
+{
+	int	min;
+	int	i;
+
+	i = 0;
+	min = find_min_nbr(*a);
+	while (i < 1)
+	{
+		
+		if (min == (*a)->content)
+		{
+			ft_pushs(a, b, 'b');
+			i++;
+		}
+		else
+		{
+			if (ft_lstlast(*a)->content == min)
+				ft_rrotates(a, b, 'a');
+			else
+			ft_rotates(a, b, 'a');
+		}
+	}
+	sort_three(a);
+	ft_pushs(a, b, 'a');
+}
+
+void	sort_five(t_list **a, t_list **b)
+{
+	int 	i;
+	int		min;
+	
+	i = 0;
+	min = find_min_nbr(*a);
+	while(i < 1)
+	{
+		if ((*a)->content == min)
+		{
+			ft_pushs(a, b, 'b');
+			i++;
+		}
+		else
+		{
+			if (ft_lstlast(*a)->content == min)
+				ft_rrotates(a, b, 'a');
+			else
+			ft_rotates(a, b, 'a');
+		}
+	}
+	sort_four(a, b);
+	ft_pushs(a, b, 'a');
+}
+
 
 void	ft_sort(t_list **a, t_list **b, int size)
 {
@@ -70,4 +102,13 @@ void	ft_sort(t_list **a, t_list **b, int size)
 		sort_three(a);
 	else if (size == 4)
 		sort_four(a, b);
+	else if (size == 5)
+		sort_five(a, b);
+	else
+	{
+		setrr(a);
+		setmoves(a);
+		setmoves(b);
+		bigsort(a, b);
+	}
 }

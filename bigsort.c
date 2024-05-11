@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   bigsort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/30 15:31:34 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/11 15:18:17 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/05/11 15:41:10 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/05/11 18:08:49 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstnew(int content)
+void	gettarget(t_list **a, t_list **b)
 {
-	static int	inx;
-	t_list		*p;
+	t_list	*tmp_a;
+	t_list	*tmp_b;
 
-	p = malloc(sizeof(t_list));
-	if (!p)
-		return (0);
-	p->index = inx++;
-	p->content = content;
-	p->next = NULL;
-	p->isrr = -1;
-	p->moves = -1;
-	p->target = NULL;
-	return (p);
+	tmp_a = (*a);
+	tmp_b = (*b);
+	while (tmp_a)
+	{
+		
+	}
+}
+
+void	bigsort(t_list **a, t_list **b)
+{
+	t_list	*tmp;
+
+	ft_pushs(a, b, 'b');
+	ft_pushs(a, b, 'b');
+	
+	while(*a)
+	{
+		gettarget(a, b);
+	}
 }

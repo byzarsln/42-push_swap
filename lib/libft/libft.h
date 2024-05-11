@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:32:16 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/04/30 15:39:04 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/11 15:17:49 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef struct s_list
 {
-	int				inx;
+	int				index;
 	int				moves;
 	int				content;
 	int				isrr;
