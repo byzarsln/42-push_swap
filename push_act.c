@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 13:47:47 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/11 15:10:18 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/12 15:56:55 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,17 @@ void	push_b(t_list **a, t_list **b)
 	
 	if (!(*a))
 		return ;
-	tmp = (*a);
-	tmp2 = (*a)->next;
-	(*b) = tmp;
-	(*a) = tmp2;
-	(*b)->next = NULL;
-	
+	tmp2 = (*a);
+	tmp = (*a)->next;
+	tmp2->next = (*b);
+	(*b) = tmp2;
+	(*a) = tmp;
+	reindex((*a));
+	reindex((*b));
+	setrr(a);
+	setrr(b);
+	setmoves(a);
+	setmoves(b);
 }
 
 void	push_a(t_list **a, t_list **b)
@@ -36,9 +41,9 @@ void	push_a(t_list **a, t_list **b)
 		return ;
 	tmp = (*b);
 	tmp2 = (*b)->next;
+	tmp->next = (*a);
 	(*b) = tmp2;
 	(*a) = tmp;
-	(*a)->next = NULL;
 	reindex((*a));
 	reindex((*b));
 	setrr(a);
