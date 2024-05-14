@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:53:59 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/01/04 19:14:51 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:42:17 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*readline(int fd, char	*readone)
 	if (!buff)
 		return (0);
 	reader = 1;
-	while (!ft_strchr(readone, '\n') && reader != 0)
+	while (!ft_strchr_gnl(readone, '\n') && reader != 0)
 	{
 		reader = read(fd, buff, BUFFER_SIZE);
 		if (reader == -1)
@@ -31,7 +31,7 @@ char	*readline(int fd, char	*readone)
 			return (NULL);
 		}
 		buff[reader] = '\0';
-		readone = ft_strjoin(readone, buff);
+		readone = ft_strjoin_gnl(readone, buff);
 	}
 	free(buff);
 	return (readone);
@@ -80,7 +80,7 @@ char	*nxtline(char *readone)
 		free(readone);
 		return (NULL);
 	}
-	str = malloc(sizeof(char) * (ft_strlen(readone) - i));
+	str = malloc(sizeof(char) * (ft_strlen_gnl(readone) - i));
 	if (!str)
 		return (NULL);
 	i++;

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrotate_act.c                                      :+:      :+:    :+:   */
+/*   rotate_act.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/10 13:48:41 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/14 17:34:00 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/05/14 17:32:58 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/05/14 17:33:17 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
-void	rrotate_b(t_list **b)
+void	rotate_b(t_list **b)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
@@ -21,38 +21,38 @@ void	rrotate_b(t_list **b)
 		return ;
 	tmp = *b;
 	tmp2 = *b;
-	while (tmp2->next->next)
+	while (tmp2->next)
 		tmp2 = tmp2->next;
-	*b = tmp2->next;
-	tmp2->next = NULL;
-	(*b)->next = tmp;
+	(*b) = (*b)->next;
+	tmp2->next = tmp;
+	tmp2->next->next = NULL;
 }
 
-void	rrotate_a(t_list **a)
+void	rotate_a(t_list **a)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
-
-	if (!*a || !(*a)->next)
+	
+	if (!(*a) || !(*a)->next)
 		return ;
 	tmp = *a;
 	tmp2 = *a;
-	while (tmp2->next->next)
+	while (tmp2->next)
 		tmp2 = tmp2->next;
-	*a = tmp2->next;
-	tmp2->next = NULL;
-	(*a)->next = tmp;
+	*a = (*a)->next;
+	tmp2->next = tmp;
+	tmp2->next->next = NULL;
 }
 
-void	ft_rrotates(t_list **a, t_list **b, char id)
+void	ft_rotates(t_list **a, t_list **b, char id)
 {
-	if ((id == 'a') && ft_printf("%s", "rra\n"))
-		rrotate_a(a);
-	else if ((id == 'b') && ft_printf("%s", "rrb\n"))
-		rrotate_b(b);
-	else if ((id == 'x') && ft_printf("%s", "rrr\n"))
+	if (id == 'a' && ft_printf("%s", "ra\n"))
+		rotate_a(a);
+	else if (id == 'b' && ft_printf("%s", "rb\n"))
+		rotate_b(b);
+	else if (id == 'x' && ft_printf("%s", "rr\n"))
 	{
-		rrotate_a(a);
-		rrotate_b(b);
+		rotate_a(a);
+		rotate_b(b);
 	}
 }

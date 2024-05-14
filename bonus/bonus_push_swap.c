@@ -1,51 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   bonus_push_swap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 18:51:21 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/14 19:44:00 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/05/14 16:36:22 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/05/14 18:17:43 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	sort_cont(t_list *a)
 {
 	t_list	*tmp;
-	
+
 	tmp = a;
-	while(tmp->next)
+	while (tmp->next)
 	{
-		if(tmp->content > tmp->next->content)
+		if (tmp->content > tmp->next->content)
 			return ;
 		tmp = tmp->next;
 	}
 	ft_printf("Error\n");
 	exit (1);
 }
-void	uniqe_cont(t_list *a)
+
+void	unique_cont(t_list *a)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
 
-	tmp2 = a;
-	while(tmp2)
+	tmp = a;
+	while (tmp)
 	{
-		tmp = tmp2->next;
-		while(tmp)
+		tmp2 = tmp->next;
+		while (tmp2)
 		{
-			if(tmp2->content == tmp->content)
+			if (tmp->content == tmp2->content)
 			{
-				ft_printf("Error\n"); // FREE FONK YAZ!!
-				exit(1);
+				ft_printf("Error\n");
+				exit (1);
 			}
-			tmp = tmp->next;
+			tmp2 = tmp2->next;
 		}
-		tmp2 = tmp2->next;
 	}
+}
+
+void	dispose_arg_list(char **arg_list)
+{
+	int	i;
+
+	i = -1;
+	while(arg_list[++i])
+		free(arg_list[i]);
+	free (arg_list);
 }
 
 void	addstack(t_list **a, char **arg_list)
@@ -53,7 +63,7 @@ void	addstack(t_list **a, char **arg_list)
 	int	i;
 
 	i = -1;
-	while(arg_list[++i])
+	while (arg_list[++i])
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(arg_list[i])));
 }
 
@@ -71,6 +81,7 @@ char	**argvsplit(char **argv)
 	free(tmp);
 	return(all_list);
 }
+
 void	argcont(char **argv)
 {
 	int i;
@@ -117,7 +128,6 @@ static void	intcont(char **argv)
 	}
 }
 
-
 void	onlyspace(char **argv)
 {
 	int	i;
@@ -131,28 +141,20 @@ void	onlyspace(char **argv)
 		{
 			if(ft_isdigit(argv[i][j]))
 				return ;
+			
 		}
 	}
 	ft_printf("Error\n");
 	exit(1);
 }
 
-void	dispose_arg_list(char **arg_list)
-{
-	int	i;
-
-	i = -1;
-	while(arg_list[++i])
-		free(arg_list[i]);
-	free(arg_list);
-}
 int main(int argc, char **argv)
 {
 	t_list	**a;
 	t_list	**b;
 	char	**arg_list;
 
-	if(argc < 2)
+	if (argc < 2)
 		return (0);
 	else
 	{
@@ -164,9 +166,13 @@ int main(int argc, char **argv)
 		arg_list = argvsplit(argv);
 		addstack(a, arg_list);
 		dispose_arg_list(arg_list);
-		uniqe_cont(*a);
+		unique_cont(*a);
 		sort_cont(*a);
-		ft_sort(a,b, ft_lstsize(*a));
+		get_action(a, b);
+		if (is_sort(a, b) == 1)
+			ft_printf("OK\n");
+		else
+			ft_printf("KO\n");
 		ft_lstclear(a, b);
 		free (a);
 		free (b);

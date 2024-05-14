@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:32:16 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/11 15:17:49 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:39:33 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ char				*ft_strjoin(char *s1, char *s2);
 char				**ft_split(char const *s, char c);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 int					ft_strncmp(const char *dest, const char *src, size_t n);
+char				*get_next_line(int fd);
 
 #endif

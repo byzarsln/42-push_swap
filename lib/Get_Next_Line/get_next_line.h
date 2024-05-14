@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 13:55:06 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/01/04 18:57:13 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/14 18:41:59 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 #  define BUFFER_SIZE 10
 # endif
 
-size_t	ft_strlen(const char *str);
-char	*ft_strchr(const char *str, int c);
-char	*ft_strjoin(char *s1, char *s2);
+size_t	ft_strlen_gnl(const char *str);
+char	*ft_strchr_gnl(const char *str, int c);
+char	*ft_strjoin_gnl(char *s1, char *s2);
 char	*get_next_line(int fd);
 char	*readline(int fd, char	*readone);
 char	*putline(char *readone);

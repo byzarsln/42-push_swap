@@ -13,7 +13,9 @@ SRC = \
 	ft_strjoin.c \
 	ft_split.c \
 	ft_strlcpy.c \
-	ft_strncmp.c
+	ft_strncmp.c \
+	../Get_Next_Line/get_next_line.c \
+	../Get_Next_Line/get_next_line_utils.c 
 
 OBJ = $(SRC:.c=.o)
 CC = gcc
