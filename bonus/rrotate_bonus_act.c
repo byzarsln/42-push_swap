@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rrotate_act.c                                      :+:      :+:    :+:   */
+/*   rrotate_bonus_act.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:33:44 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/14 17:34:07 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 14:24:37 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ void	rrotate_a(t_list **a)
 
 void	ft_rrotates(t_list **a, t_list **b, char id)
 {
-	if ((id == 'a') && ft_printf("%s", "rra\n"))
+	if (id == 'a')
 		rrotate_a(a);
-	else if ((id == 'b') && ft_printf("%s", "rrb\n"))
+	else if (id == 'b')
 		rrotate_b(b);
-	else if ((id == 'x') && ft_printf("%s", "rrr\n"))
+	else if (id == 'x')
 	{
 		rrotate_a(a);
 		rrotate_b(b);

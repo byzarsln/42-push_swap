@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 19:06:30 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/14 18:05:29 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:34:56 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,10 @@ void	rotate_same_rr(t_list **a, t_list **b, t_list *tmp);
 void	rotate_tmp(t_list **a, t_list **b, t_list *tmp);
 void	rrotate_tmp(t_list **a, t_list **b, t_list *tmp);
 void	laststep(t_list **a, t_list **b);
+void	print_free_a(t_list *a);
+void	onlyspace(char **argv);
+void	intcont(char **argv);
+void	argcont(char **argv);
+void	uniqe_cont(t_list *a);
 
 #endif

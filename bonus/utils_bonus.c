@@ -1,16 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 18:27:56 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/14 18:28:30 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:34:33 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
+
+void	print_free_a(t_list *a)
+{
+	t_list	*tmp;
+
+	while (a)
+	{
+		tmp = a->next;
+		free(a);
+		a = tmp;
+	}
+	free(a);
+	ft_printf("Error\n");
+	exit (1);
+}
 
 void	reindex(t_list *stack)
 {
@@ -19,7 +34,7 @@ void	reindex(t_list *stack)
 
 	tmp = stack;
 	i = 0;
-	while(tmp)
+	while (tmp)
 	{
 		tmp->index = i;
 		i++;
@@ -29,8 +44,8 @@ void	reindex(t_list *stack)
 
 void	setrr(t_list **stack)
 {
-	t_list *tmp;
-	
+	t_list	*tmp;
+
 	tmp = *stack;
 	while (tmp)
 	{
@@ -40,22 +55,19 @@ void	setrr(t_list **stack)
 			tmp->isrr = 1;
 		tmp = tmp->next;
 	}
-	
 }
 
 void	setmoves(t_list **stack)
 {
 	t_list	*tmp;
-	
+
 	tmp = *stack;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->isrr == 0)
 			tmp->moves = tmp->index;
 		else
-		{
 			tmp->moves = ft_lstsize(*stack) - tmp->index;
-		}
 		tmp = tmp->next;
 	}
 }

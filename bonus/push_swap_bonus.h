@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:36:42 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/14 18:34:53 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:18:54 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,10 @@ void	setmoves(t_list **stack);
 void	setrr(t_list **stack);
 void	reindex(t_list *stack);
 int		is_sort(t_list **a, t_list **b);
+void	print_free_a(t_list *a);
+void	onlyspace(char **argv);
+void	intcont(char **argv);
+void	argcont(char **argv);
+void	unique_cont(t_list *a);
 
 #endif 

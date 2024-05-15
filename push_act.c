@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 13:47:47 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/12 15:56:55 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:24:52 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push_b(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
-	
+
 	if (!(*a))
 		return ;
 	tmp2 = (*a);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_act.c                                         :+:      :+:    :+:   */
+/*   push_bonus_act.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:32:08 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/14 17:33:19 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:32:07 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push_b(t_list **a, t_list **b)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
-	
+
 	if (!(*a))
 		return ;
 	tmp2 = (*a);
@@ -54,8 +54,8 @@ void	push_a(t_list **a, t_list **b)
 
 void	ft_pushs(t_list **a, t_list **b, char id)
 {
-	if (id == 'a' && ft_printf("%s", "pa\n"))
+	if (id == 'a')
 		push_a(a, b);
-	else if (id == 'b' && ft_printf("%s", "pb\n"))
+	else if (id == 'b')
 		push_b(a, b);
 }

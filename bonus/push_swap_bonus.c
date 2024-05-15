@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/29 18:51:21 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/15 16:27:20 by beyarsla         ###   ########.fr       */
+/*   Created: 2024/05/14 16:36:22 by beyarsla          #+#    #+#             */
+/*   Updated: 2024/05/15 16:33:05 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 void	sort_cont(t_list *a)
 {
@@ -24,6 +24,16 @@ void	sort_cont(t_list *a)
 		tmp = tmp->next;
 	}
 	print_free_a(a);
+}
+
+void	dispose_arg_list(char **arg_list)
+{
+	int	i;
+
+	i = -1;
+	while (arg_list[++i])
+		free(arg_list[i]);
+	free (arg_list);
 }
 
 void	addstack(t_list **a, char **arg_list)
@@ -50,16 +60,6 @@ char	**argvsplit(char **argv)
 	return (all_list);
 }
 
-void	dispose_arg_list(char **arg_list)
-{
-	int	i;
-
-	i = -1;
-	while (arg_list[++i])
-		free(arg_list[i]);
-	free(arg_list);
-}
-
 int	main(int argc, char **argv)
 {
 	t_list	**a;
@@ -76,9 +76,13 @@ int	main(int argc, char **argv)
 	arg_list = argvsplit(argv);
 	addstack(a, arg_list);
 	dispose_arg_list(arg_list);
-	uniqe_cont(*a);
+	unique_cont(*a);
 	sort_cont(*a);
-	ft_sort(a, b, ft_lstsize(*a));
+	get_action(a, b);
+	if (is_sort(a, b) == 1)
+		ft_printf("OK\n");
+	else
+		ft_printf("KO\n");
 	ft_lstclear(a, b);
 	free (a);
 	free (b);

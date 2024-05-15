@@ -6,18 +6,32 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 14:46:14 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/14 18:05:22 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:29:56 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	print_free_a(t_list *a)
+{
+	t_list	*tmp;
+
+	while (a)
+	{
+		tmp = a->next;
+		free(a);
+		a = tmp;
+	}
+	free(a);
+	ft_printf("Error\n");
+	exit (1);
+}
 
 t_list	*get_node(int index, t_list **stack)
 {
 	t_list	*tmp;
 
 	tmp = (*stack);
-	
 	while (tmp)
 	{
 		if (tmp->index == index)

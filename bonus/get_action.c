@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:09:03 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/14 18:15:36 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:31:45 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	print_error(t_list **a, t_list **b)
 int	is_sort(t_list **a, t_list **b)
 {
 	t_list	*tmp;
-	
+
 	tmp = (*a);
 	if (*b)
 		print_error(a, b);

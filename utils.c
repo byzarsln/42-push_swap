@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 18:04:24 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/11 15:15:43 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:29:33 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 int	find_min_nbr(t_list *a)
 {
-	int min;
+	int	min;
 
 	min = a->content;
 	a = a->next;
 	while (a)
 	{
-		 if (min > a->content)
-		 	min = a->content;
+		if (min > a->content)
+			min = a->content;
 		a = a->next;
 	}
 	return (min);
@@ -34,7 +34,7 @@ void	reindex(t_list *stack)
 
 	tmp = stack;
 	i = 0;
-	while(tmp)
+	while (tmp)
 	{
 		tmp->index = i;
 		i++;
@@ -44,8 +44,8 @@ void	reindex(t_list *stack)
 
 void	setrr(t_list **stack)
 {
-	t_list *tmp;
-	
+	t_list	*tmp;
+
 	tmp = *stack;
 	while (tmp)
 	{
@@ -55,22 +55,19 @@ void	setrr(t_list **stack)
 			tmp->isrr = 1;
 		tmp = tmp->next;
 	}
-	
 }
 
 void	setmoves(t_list **stack)
 {
 	t_list	*tmp;
-	
+
 	tmp = *stack;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->isrr == 0)
 			tmp->moves = tmp->index;
 		else
-		{
 			tmp->moves = ft_lstsize(*stack) - tmp->index;
-		}
 		tmp = tmp->next;
 	}
 }

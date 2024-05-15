@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 17:07:48 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/11 15:40:40 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:24:26 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,24 @@ void	sort_three(t_list **a)
 	a3 = (*a)->next->next->content;
 	if (!*a || !(*a)->next || !(*a)->next->next)
 		return ;
-	if (a1 < a2 && a1 < a3 && a2 > a3) // 1 3 2
+	if (a1 < a2 && a1 < a3 && a2 > a3)
 	{
 		ft_rrotates(a, NULL, 'a');
 		ft_swaps(a, NULL, 'a');
 	}
-	else if (a1 > a2 && a1 < a3 && a2 < a3) // 2 1 3
+	else if (a1 > a2 && a1 < a3 && a2 < a3)
 		ft_swaps(a, NULL, 'a');
-	else if (a1 < a2 && a1 > a3 && a2 > a3) // 2 3 1
+	else if (a1 < a2 && a1 > a3 && a2 > a3)
 		ft_rrotates(a, NULL, 'a');
-	else if (a1 > a2 && a1 > a3 && a2 < a3) // 3 1 2
-			ft_rotates(a, NULL, 'a');
-	else if (a1 > a2 && a1 > a3 && a2 > a3) // 3 2 1
+	else if (a1 > a2 && a1 > a3 && a2 < a3)
+		ft_rotates(a, NULL, 'a');
+	else if (a1 > a2 && a1 > a3 && a2 > a3)
 	{
 		ft_rotates(a, NULL, 'a');
 		ft_swaps(a, NULL, 'a');
 	}
 }
+
 void	sort_four(t_list **a, t_list **b)
 {
 	int	min;
@@ -49,7 +50,6 @@ void	sort_four(t_list **a, t_list **b)
 	min = find_min_nbr(*a);
 	while (i < 1)
 	{
-		
 		if (min == (*a)->content)
 		{
 			ft_pushs(a, b, 'b');
@@ -60,7 +60,7 @@ void	sort_four(t_list **a, t_list **b)
 			if (ft_lstlast(*a)->content == min)
 				ft_rrotates(a, b, 'a');
 			else
-			ft_rotates(a, b, 'a');
+				ft_rotates(a, b, 'a');
 		}
 	}
 	sort_three(a);
@@ -69,12 +69,12 @@ void	sort_four(t_list **a, t_list **b)
 
 void	sort_five(t_list **a, t_list **b)
 {
-	int 	i;
-	int		min;
-	
+	int	i;
+	int	min;
+
 	i = 0;
 	min = find_min_nbr(*a);
-	while(i < 1)
+	while (i < 1)
 	{
 		if ((*a)->content == min)
 		{
@@ -86,13 +86,12 @@ void	sort_five(t_list **a, t_list **b)
 			if (ft_lstlast(*a)->content == min)
 				ft_rrotates(a, b, 'a');
 			else
-			ft_rotates(a, b, 'a');
+				ft_rotates(a, b, 'a');
 		}
 	}
 	sort_four(a, b);
 	ft_pushs(a, b, 'a');
 }
-
 
 void	ft_sort(t_list **a, t_list **b, int size)
 {

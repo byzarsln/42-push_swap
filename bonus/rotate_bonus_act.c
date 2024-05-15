@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_act.c                                       :+:      :+:    :+:   */
+/*   rotate_bonus_act.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:32:58 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/14 17:33:17 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:33:22 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	rotate_a(t_list **a)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
-	
+
 	if (!(*a) || !(*a)->next)
 		return ;
 	tmp = *a;
@@ -46,11 +46,11 @@ void	rotate_a(t_list **a)
 
 void	ft_rotates(t_list **a, t_list **b, char id)
 {
-	if (id == 'a' && ft_printf("%s", "ra\n"))
+	if (id == 'a')
 		rotate_a(a);
-	else if (id == 'b' && ft_printf("%s", "rb\n"))
+	else if (id == 'b')
 		rotate_b(b);
-	else if (id == 'x' && ft_printf("%s", "rr\n"))
+	else if (id == 'x')
 	{
 		rotate_a(a);
 		rotate_b(b);

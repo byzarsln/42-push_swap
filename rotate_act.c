@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 13:49:01 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/10 17:37:03 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:27:43 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	rotate_a(t_list **a)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
-	
+
 	if (!(*a) || !(*a)->next)
 		return ;
 	tmp = *a;
