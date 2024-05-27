@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:13:41 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/15 16:22:56 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:00:15 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ void	uniqe_cont(t_list *a)
 		while (tmp)
 		{
 			if (tmp2->content == tmp->content)
+			{
+				ft_printf("Error\n");
 				print_free_a(a);
+			}
 			tmp = tmp->next;
 		}
 		tmp2 = tmp2->next;

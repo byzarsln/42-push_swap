@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:09:03 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/15 16:31:45 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:35:58 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	is_sort(t_list **a, t_list **b)
 
 	tmp = (*a);
 	if (*b)
-		print_error(a, b);
+		return (0);
 	while (tmp->next)
 	{
 		if (tmp->content > tmp->next->content)

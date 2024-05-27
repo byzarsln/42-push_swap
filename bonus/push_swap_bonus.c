@@ -6,25 +6,11 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:36:22 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/15 16:33:05 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/18 14:03:01 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-
-void	sort_cont(t_list *a)
-{
-	t_list	*tmp;
-
-	tmp = a;
-	while (tmp->next)
-	{
-		if (tmp->content > tmp->next->content)
-			return ;
-		tmp = tmp->next;
-	}
-	print_free_a(a);
-}
 
 void	dispose_arg_list(char **arg_list)
 {
@@ -77,7 +63,6 @@ int	main(int argc, char **argv)
 	addstack(a, arg_list);
 	dispose_arg_list(arg_list);
 	unique_cont(*a);
-	sort_cont(*a);
 	get_action(a, b);
 	if (is_sort(a, b) == 1)
 		ft_printf("OK\n");

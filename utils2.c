@@ -6,7 +6,7 @@
 /*   By: beyarsla <beyarsla@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 14:46:14 by beyarsla          #+#    #+#             */
-/*   Updated: 2024/05/15 16:29:56 by beyarsla         ###   ########.fr       */
+/*   Updated: 2024/05/18 13:59:19 by beyarsla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	print_free_a(t_list *a)
 		a = tmp;
 	}
 	free(a);
-	ft_printf("Error\n");
 	exit (1);
 }
 
